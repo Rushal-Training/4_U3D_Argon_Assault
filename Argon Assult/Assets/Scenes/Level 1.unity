@@ -132,6 +132,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 100
+  hits: 3
 --- !u!1 &56714901 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
@@ -151,6 +152,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 250
+  hits: 6
 --- !u!1001 &196800894
 Prefab:
   m_ObjectHideFlags: 0
@@ -216,7 +218,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_Name
-      value: Ship_03 (1)
+      value: Falcon (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
@@ -250,6 +252,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 100
+  hits: 3
 --- !u!4 &328154293 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4728979937123306, guid: 3b4d0e54a477e0048be15b844dc35263,
@@ -414,6 +417,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
     type: 2}
   m_PrefabInternal: {fileID: 576775269}
+--- !u!95 &569747093
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569747090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &569747094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +449,25 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 250
+  hits: 6
+--- !u!320 &569747095
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569747090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c161e6561e1d78644a218d496c2a6c41, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 114642715977154972, guid: c161e6561e1d78644a218d496c2a6c41, type: 2}
+    value: {fileID: 569747093}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &576775269
 Prefab:
   m_ObjectHideFlags: 0
@@ -437,11 +477,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.83
+      value: 5.233
       objectReference: {fileID: 0}
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.76
+      value: -0.129
       objectReference: {fileID: 0}
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -449,15 +489,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.0000000018626454
+      value: 0.0000000018626458
       objectReference: {fileID: 0}
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000014901163
+      value: -0.000000014901167
       objectReference: {fileID: 0}
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.26141307
+      value: -0.26141313
       objectReference: {fileID: 0}
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalRotation.w
@@ -490,6 +530,10 @@ Prefab:
     - target: {fileID: 4990607877152018, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
+      propertyPath: m_Name
+      value: Falcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
@@ -605,6 +649,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 100
+  hits: 3
 --- !u!1001 &733288037
 Prefab:
   m_ObjectHideFlags: 0
@@ -906,7 +951,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
       propertyPath: m_Name
-      value: Ship_01 (4)
+      value: Hawk (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
@@ -935,6 +980,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 250
+  hits: 6
 --- !u!1 &992267575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1164,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
       propertyPath: m_Name
-      value: Ship_01 (5)
+      value: Hawk (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
@@ -1193,7 +1239,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_Name
-      value: Ship_03 (2)
+      value: Falcon (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
@@ -1355,7 +1401,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
       propertyPath: m_Name
-      value: Ship_01 (1)
+      value: Hawk (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
@@ -1426,6 +1472,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 100
+  hits: 3
 --- !u!1 &1446580746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1602,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 152.10301
       objectReference: {fileID: 0}
+    - target: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
+      propertyPath: m_Name
+      value: Hawk
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
   m_IsPrefabAsset: 0
@@ -1577,6 +1628,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 250
+  hits: 6
 --- !u!1 &1528157103 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba,
@@ -1596,6 +1648,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 100
+  hits: 3
 --- !u!1 &1640756977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba,
@@ -1620,6 +1673,7 @@ MonoBehaviour:
   deathFX: {fileID: 1572338852835192, guid: 916cb4dbd75566a4fbe001cec86ff1bf, type: 2}
   parent: {fileID: 1083399538}
   scorePerHit: 100
+  hits: 3
 --- !u!1001 &1760712625
 Prefab:
   m_ObjectHideFlags: 0
@@ -1685,7 +1739,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
       propertyPath: m_Name
-      value: Ship_01 (2)
+      value: Hawk (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
@@ -1755,7 +1809,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
       propertyPath: m_Name
-      value: Ship_01 (3)
+      value: Hawk (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14d375f5a36551479fc2f172353b1ba, type: 2}
@@ -1858,7 +1912,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
       propertyPath: m_Name
-      value: Ship_03 (3)
+      value: Falcon (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd, type: 2}
