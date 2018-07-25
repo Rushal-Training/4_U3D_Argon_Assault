@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-	[Tooltip ( "In meters per second" )][SerializeField] float speed = 20f;
-	[Tooltip ( "In meters" )][SerializeField] float xRange = 4f;
-	[Tooltip ( "In meters" )] [SerializeField] float yRange = 2.75f;
+	[Header("General")]
+	[Tooltip ( "In meters per second" )][SerializeField] float controlSpeed = 10f;
+	[Tooltip ( "In meters" )][SerializeField] float xRange = 8f;
+	[Tooltip ( "In meters" )] [SerializeField] float yRange = 4f;
 
+	[Header ( "Screen-position Based" )]
 	[SerializeField] float positionPitchFactor = -5f;
+	[SerializeField] float positionYawFactor = 6.5f;
+
+	[Header ( "Control-throw Based" )]
+	[SerializeField] float controlRollFactor = -30f;
 	[SerializeField] float controlPitchFactor = -20f;
-	[SerializeField] float positionYawFactor = 5f;
-	[SerializeField] float controlRollFactor = -20f;
 
 	float xThrow, yThrow;
+	bool isControllable = true;
 
-	void Start ()
-	{
-		
-	}
-	
 	void Update ()
 	{
 		Move ();
@@ -28,8 +28,11 @@ public class Player : MonoBehaviour
 
 	private void Move ()
 	{
-		ProssessTranslation ();
-		ProcessRotation ();
+		if(isControllable)
+		{
+			ProssessTranslation ();
+			ProcessRotation ();
+		}
 	}
 
 	private void ProssessTranslation ()
@@ -37,8 +40,8 @@ public class Player : MonoBehaviour
 		xThrow = CrossPlatformInputManager.GetAxis ( "Horizontal" );
 		yThrow = CrossPlatformInputManager.GetAxis ( "Vertical" );
 
-		float xOffset = speed * xThrow * Time.deltaTime;
-		float yOffset = speed * yThrow * Time.deltaTime;
+		float xOffset = controlSpeed * xThrow * Time.deltaTime;
+		float yOffset = controlSpeed * yThrow * Time.deltaTime;
 
 		float rawXPos = transform.localPosition.x + xOffset;
 		float rawYPos = transform.localPosition.y + yOffset;
@@ -58,5 +61,11 @@ public class Player : MonoBehaviour
 		float roll = xThrow * controlRollFactor;
 
 		transform.localRotation = Quaternion.Euler ( pitch, yaw, roll );
+	}
+
+	private void OnPlayerDeath () // Called by string reference
+	{
+		isControllable = false;
+		print ( "controls frozen" );
 	}
 }
